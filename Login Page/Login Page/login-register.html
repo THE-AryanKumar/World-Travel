@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+
+  <title>Login</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+
+
+
+
+
+        <form class="sign-in-form" id="sign-form">
+          <h2 class="title">Sign In</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="email" placeholder="Email" name="email" id="email_signin" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" name="password" id="password_signin" />
+          </div>
+          <input type="submit" name="login" id="login" value="Login" class="btn solid" />
+
+
+
+
+          <p class="social-text">Or sign in with social platforms</p>
+          <div class="social-media">
+            <a href="#" class="social-icon">
+              <i class="fab fa-facebook-f" id="btn2"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-google" id="btn1"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </form>
+        <form class="sign-up-form" enctype="multipart/form-data" id="signup-form">
+          <h2 class="title">Sign Up</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" name="username" id="username" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" name="email" id="email" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-user-circle"></i>
+            <input type="file" placeholder="Profile Photo" name="image" id="image" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" name="password" id="password" />
+          </div>
+          <input type="submit" value="Sign up" onclick="signUpButtonPressed()" class="btn solid" id="signUp" />
+        </form>
+        <!-- {% if error %} -->
+        <p class="error"><strong></strong></p>
+      </div>
+    </div>
+
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>New here?</h3>
+          <p>
+            What are you waiting for? Let's travel the World together in a fun
+            way!
+          </p>
+          <button class="btn transparent" id="sign-up-btn">Sign up</button>
+        </div>
+        <img src="5.png" class="image" alt="" />
+      </div>
+
+      <div class="panel right-panel">
+        <div class="content">
+          <h3>Already a member?</h3>
+          <p>Hurry Up! Adventure waiting For You.</p>
+          <button class="btn transparent" id="sign-in-btn">Sign in</button>
+        </div>
+        <img src="1.png" class="image" alt="" />
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+  <script src="auth.js"></script>
+</body>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
+  import { GoogleAuthProvider, signInWithRedirect, getRedirectResult, signInWithPopup, FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
+  // import { getDatabase ,set,ref} from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
+  import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDeyiWmXZ9_Bh5ZwbMXAvbo_A903lRK1Eg",
+    authDomain: "loginpage-cbe6a.firebaseapp.com",
+    projectId: "loginpage-cbe6a",
+    storageBucket: "loginpage-cbe6a.appspot.com",
+    messagingSenderId: "793341940672",
+    appId: "1:793341940672:web:80dfd9a0441f3c321d6e25"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider(app);
+  const database = getDatabase(app);
+
+  btn1.addEventListener('click', (e) => {
+    e.preventDefault();
+    signInWithRedirect(auth, provider);
+
+    getRedirectResult(auth)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access Google APIs.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+
+        // The signed-in user info.
+        const user = result.user;
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+      });
+
+  });
+
+  signUp.addEventListener('click', (e) => {
+    e.preventDefault();
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var username = document.getElementById('username').value;
+
+    const file = document.getElementById('image').files[0];
+    console.log(document.getElementById('image'))
+    const reader = new FileReader();
+
+    reader.addEventListener("load", () => {
+      // convert image file to base64 string
+      console.log('img upload ho rhi hai');
+      localStorage.setItem('profileImage', reader.result);
+      
+      createUserWithEmailAndPassword(auth, email, password, image)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        localStorage.setItem('email', email);
+        localStorage.setItem('username', username);
+        console.log(username)
+        console.log(email)
+        
+        set(ref(database, 'users/' + user.uid), {
+          username: username,
+          image: reader.result,
+          email: email
+        })
+        alert('user created!');
+        // ...
+      })
+      // sighUp.addEventListener
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorMessage);
+        // ..
+      });
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  });
+
+
+
+
+
+
+
+
+  login.addEventListener('click', (e1) => {
+    e1.preventDefault();
+
+    var email = document.getElementById('email_signin').value;
+    var password = document.getElementById('password_signin').value;
+    console.log(email, password)
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        // console.log(user)
+
+        const dt = new Date();
+        update(ref(database, 'users/' + user.uid), {
+          last_login: dt,
+        })
+        // ...
+        console.log('hogaya login');
+        alert("User logged in!");
+        window.location.replace("");
+      })
+
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        alert(errorMessage);
+      });
+  });
+  const user = auth.currentUser;
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      const uid = user.uid;
+      // ...
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
+  logout.addEventListener('click', (e) => {
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      alert('user logged out');
+    }).catch((error) => {
+      // An error happened.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      alert(errorMessage);
+    });
+  });
+
+
+
+
+
+
+  const fbProvider = new FacebookAuthProvider();
+  btn2.addEventListener('click', (e) => {
+    e.preventDefault();
+    const auth = getAuth();
+    signInWithPopup(auth, fbProvider)
+      .then((result) => {
+        // The signed-in user info.
+        const user = result.user;
+
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        const credential = FacebookAuthProvider.credentialFromResult(result);
+        const accessToken = credential.accessToken;
+
+        // ...
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = FacebookAuthProvider.credentialFromError(error);
+        // ...
+      });
+
+    getRedirectResult(auth)
+      .then((result) => {
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        const credential = FacebookAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+
+        const user = result.user;
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // AuthCredential type that was used.
+        const credential = FacebookAuthProvider.credentialFromError(error);
+        // ...
+      });
+  });
+
+</script>
+
+</script>
+
+</html> 

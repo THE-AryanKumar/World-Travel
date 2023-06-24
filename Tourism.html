@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Travel's</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+    crossorigin="anonymous"/>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://pro.frontawesome.com/releases/v5.10.0/css/all.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="profile/profile.css" /> -->
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+</head>
+<body>
+
+<div id="loader"></div>
+    
+<!-- header section starts  -->
+
+<header id="headerbar">
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <a href="#" class="logo"><span>World</span>Travel</a>
+
+    <nav class="navbar" id="topnav">
+        <ul class="nav">
+
+        <li><a href="#home"><i class="fa fa-home"> home </i></a></li>
+        <div class="dropdown">
+            <li><a href="#book"> book <i class="fa fa-caret-down"></i></a></li>
+            <div class="dropdown-content">
+                <a href="#packages">Packages</a>
+                <a href="#Guidance">Guidance</a>
+                <a href="#book">Book</a>
+            </div>
+        </div>
+        <li><a href="#gallery">Gallery</i></a></li>
+        <div class="dropdown">
+            <li><a href="#"> Info <i class="fa fa-caret-down"></i></a></li>
+            <div class="dropdown-content">
+                <a href="Weather/Weather/weather.html">Weather</a>
+                <a href="http://chatbox5.herokuapp.com/">ChatBox</a>
+                <a href="FAQs.html">FAQs</a>
+            </div>
+        </div>
+        <li><a href="#team"> Team</a></li>
+        <!-- <li><a href="#team"> team</a></li> -->
+        <div class="dropdown">
+            <li><a href="#">More <i class="fa fa-caret-down"></i></a></li>
+            <div class="dropdown-content">
+                <a href="testimonial/testimonial/index.html">Testimonial</a>
+                <a href="contactform/index.html">Contact</a>
+                <a href="#media">Media</a> 
+            </div>
+        </div>
+        </ul>
+    </nav>
+
+    <div class="icons">
+        <i href="" class="fas fa-search" id="search-btn"></i>
+        <a href="Login Page/Login Page/login-register.html"><i class="fa fa-user" id="login-btn"></i></a>
+        <button onclick="darkmode()" class="fa fa-adjust" id="adjust-btn"></button>
+    </div>
+
+    <div class="action">
+        <div class="profile" onclick="menuToggle();">
+          <img src=""/ id="profilePhoto">
+          <script>
+        document.getElementById("profilePhoto").src = localStorage.getItem('profileImage')
+          </script>
+        </div>
+        <div class="menu">
+          <h3 id="profileName2">
+            <script>
+        document.getElementById("profileName2").innerText = localStorage.getItem('username')
+
+            </script>
+            <br /><span id="profileName3">
+                <script>
+        document.getElementById("profileName3").innerText = localStorage.getItem('email')
+                </script>
+
+            </span></h3>
+          <ul>
+            <li><img src="profile/user.png" /><a href="ProfileDisplay.html">My profile</a></li>
+            <li><img src="profile/edit.png" /><a href="#">Edit profile</a></li>
+            <li><img src="profile/envelope.png" /><a href="#">Inbox</a></li>
+            <li><img src="profile/settings.png" /><a href="#">Setting</a></li>
+            <li><img src="profile/question.png" /><a href="#">Help</a></li>
+            <li ><img src="profile/log-out.png" /><a href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+      <script>
+        function menuToggle() {
+          const toggleMenu = document.querySelector(".menu");
+          toggleMenu.classList.toggle("active");
+        }
+      </script>
+
+    <form action="" class="search-bar-container">
+        <input type="search" id="search-bar" placeholder="search here...">
+        <label for="search-bar" class="fas fa-search"></label>
+    </form>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- login form container  -->
+
+<div class="login-form-container">
+
+    <i class="fas fa-times" id="form-close"></i>
+
+    <form action="">
+        <h3>login</h3>
+        <input type="email" class="box" placeholder="enter your email">
+        <input type="password" class="box" placeholder="enter your password">
+        <input type="submit" value="login now" class="btn">
+        <input type="checkbox" id="remember">
+        <label for="remember">remember me</label>
+        <p>forget password? <a href="#">click here</a></p>
+        <p>don't have and account? <a href="#Signup">Signup</a></p>
+    </form>
+</div>
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3>World is big to Travel</h3>
+        <p>dicover new places with us, adventure awaits</p>
+        <a href="#packages" class="btn">discover more  <i class="fa fa-arrow-right"></i></a>
+        <!-- <button onclick="darkmode()"><a href="#" class="btn">Dark mode</a></button> -->
+    </div>
+
+        <div class="controls">
+        <span class="vid-btn active" data-src="images/vid-1.mp4"></span>
+        <span class="vid-btn" data-src="images/vid-2.mp4"></span>
+        <span class="vid-btn" data-src="images/vid-3.mp4"></span>
+        <span class="vid-btn" data-src="images/vid-4.mp4"></span>
+        <span class="vid-btn" data-src="images/vid-5.mp4"></span>
+        <span class="vid-btn" data-src="images/vid-6.mp4"></span>
+        </div>
+
+
+    <div class="video-container">
+        <video src="images/vid-1.mp4" id="video-slider" loop autoplay muted></video>
+    </div>
+
+</section>
+
+<button id="btnScrollToTop">
+    <a href="#home"><i class="fa fa-arrow-up fa-3x"></i></a>
+</button>
+
+<button id="chatboxbtn">
+    <a href="http://chatbox5.herokuapp.com/"><i class="fab fa-facebook-messenger fa-3x"></i></a>
+</button>
+
+<!-- home section ends -->
+
+<!-- book section starts  -->
+
+<section class="book" id="book">
+
+    <h1 class="heading">
+        <span>B</span>
+        <span>O</span>
+        <span>O</span>
+        <span>K</span>
+        <span>-</span>
+        <span>N</span>
+        <span>O</span>
+        <span>W</span>
+    </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="images/book-img.svg" alt="book_shake">
+        </div>
+
+        <form action="" id="FirebaseBooking">
+            <div class="inputBox">
+                <h3>where to</h3>
+                <input type="text" id="where" placeholder="place name">
+            </div>
+            <div class="inputBox">
+                <h3>how many</h3>
+                <input type="number" id="number" placeholder="number of guests">
+            </div>
+            <div class="inputBox">
+                <h3>arrivals</h3>
+                <input type="date" id="arrivals">
+            </div>
+            <div class="inputBox">
+                <h3>leaving</h3>
+                <input type="date" id="leaving">
+            </div>
+            <input type="submit" class="btn" id="submit"  onclick="alert('BOOKING SUCCESSFULL')" value="book now">
+        </form>
+
+    </div>
+
+</section>
+
+<!-- book section ends -->
+
+<!-- packages section starts  -->
+
+<section class="packages" id="packages">
+
+    <h1 class="heading">
+        <span>p</span>
+        <span>a</span>
+        <span>c</span>
+        <span>k</span>
+        <span>a</span>
+        <span>g</span>
+        <span>e</span>
+        <span>s</span>
+    </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <a href="https://www.visitdubai.com/en/"></a>
+            <img id="packages_img" src="images/p-1.jpg" alt="">
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/place/Dubai+-+United+Arab+Emirates/@25.0757595,54.9472949,10z/data=!3m1!4b1!4m5!3m4!1s0x3e5f43496ad9c645:0xbde66e5084295162!8m2!3d25.2048493!4d55.2707828"><i class="fas fa-map-marker-alt"></a></i> Dubai </h3>
+                <p><b>Habibi, come to Dubai!</b></p><p> Dubai is the largest and most populous city in the UAE. There are approximately 2,780,000 residents from over 200 nationalities, plus countless tourists and traders on any given day. </p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price"> ₹1999 <br> $33.00 <span>$80.00</span> </div>
+
+                <a href="https://www.visitdubai.com/en/" class="btn">Explore More</a>
+            </div>
+        </div>
+        </a>
+
+        <div class="box">
+            <a href="https://www.tourism-of-india.com/"></a>
+            <img id="packages_img" src="images/p-2.jpg" alt="">
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/place/India/@22.994358,74.1912461,4.93z/data=!4m5!3m4!1s0x30635ff06b92b791:0xd78c4fa1854213a6!8m2!3d20.593684!4d78.96288"><i class="fas fa-map-marker-alt"></i></a> India </h3>
+                <p><b>Namaste...!</b></p><p> Park is the only natural habitat of the endangered One-Horned Rhinos in India & the world. Located in the Golaghat district of Assam.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="price"> ₹999 <br> $22.00 <span>$40.00</span> </div>
+                <a href="https://www.tourism-of-india.com/" class="btn">book now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <a href="https://tourism.gov.mm/">
+            <img id="packages_img" src="images/p-3.jpg" alt=""></a>
+            <div class="content">
+                <h3><a  href="https://www.google.com/maps/place/Myanmar+(Burma)/@18.7806905,87.6358888,5z/data=!3m1!4b1!4m5!3m4!1s0x305652a7714e2907:0xba7b0ee41c622b11!8m2!3d21.916221!4d95.955974"><i class="fas fa-map-marker-alt"></i></a> Myanmar </h3>
+                <p><b> Simplicity </b></p><p> located in Mysore district of Karnataka and is a popular destination for Deer spotting. It is also known as "Rajiv Gandhi National Park".</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> ₹1200 <br>  $20.00 <span>$45.00</span> </div>
+                <a href="https://tourism.gov.mm/" class="btn">book now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <a href="https://www.tourism.gov.mv/"></a>
+            <img id="packages_img" src="images/p-4.jpg" alt="">
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/place/Maldives/@1.7315405,72.0859007,7.35z/data=!4m5!3m4!1s0x24b599bfaafb7bbd:0x414509e181956289!8m2!3d3.202778!4d73.22068"><i class="fas fa-map-marker-alt"></i></a> Maldives </h3>
+                <p><b> Love Destination </b></p><p> stunning wildlife sanctuaries in Uttarakhand. Mammals like the Asian elephants, leopards, Himalayan black bear is popular. </p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> ₹3000.00 <br> $40 <span>$65.00</span> </div>
+                <a href="https://www.tourism.gov.mv/" class="btn">Explore More</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <a href="https://www.tourism.gov.hk/en/"></a>
+            <img id="packages_img" src="images/p-5.jpg" alt="">
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/place/Hong+Kong/@22.3526632,113.9876137,11z/data=!3m1!4b1!4m5!3m4!1s0x3403e2eda332980f:0xf08ab3badbeac97c!8m2!3d22.3193039!4d114.1693611"> <i class="fas fa-map-marker-alt"></i></a> Hong Kong </h3>
+                <p><b>Wonder </b></p><p> one of the largest wildlife sanctuaries located on the Western Ghats in Kerala. It is also the dwelling of Mugger Crocodiles</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> ₹300000.00 <br> $4000 <span>$4500.00</span> </div>
+                <a href="https://www.tourism.gov.hk/en/" class="btn">Explore More</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <a href="https://www.visitbritain.com/gb/"></a>
+            <img id="packages_img" src="images/p-6.jpg" alt="">
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/place/United+Kingdom/@54.2185635,-13.4296503,5z/data=!3m1!4b1!4m5!3m4!1s0x25a3b1142c791a9:0xc4f8a0433288257a!8m2!3d55.378051!4d-3.435973"> <i class="fas fa-map-marker-alt"></i></a> United Kingdom </h3>
+                <p><b> City of Royality </b></p><p> lies among the snow-capped mountain peaks Kullu, Himachal Pradesh. Snow Leopard, Himalayan Brown Bear, and Himalayan Thar are commonly found animals.</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> ₹310000.00 <br> $4000.00 <span>$4500.00</span> </div>
+                <a href="https://www.visitbritain.com/gb/" class="btn">Explore Now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <a href="https://www.francetourisme.fr/index_en.html?gclid=Cj0KCQjw0JiXBhCFARIsAOSAKqDxtfrK55z-QhaPDGb-SxKqM4SPdm2kE-ZVvrlWhJvrAVAFCkvtuu8aAnMLEALw_wcB"></a>
+            <img id="packages_img" src="images/p-7.jpg" alt="">
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/place/France/@44.7025684,-16.4305354,5z/data=!3m1!4b1!4m5!3m4!1s0xd54a02933785731:0x6bfd3f96c747d9f7!8m2!3d46.227638!4d2.213749"><i class="fas fa-map-marker-alt"></i></a> France </h3>
+                <p><B>City of Light & love</B> </p><p>Paris, capital of France, is one of the most important and influential cities in the world. In terms of tourism, Paris is the second most visited city in Europe after London. </p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> ₹ 180000 <br> $2500.00 <span>$3000.00</span> </div>
+                <a href="https://www.francetourisme.fr/index_en.html?gclid=Cj0KCQjw0JiXBhCFARIsAOSAKqDxtfrK55z-QhaPDGb-SxKqM4SPdm2kE-ZVvrlWhJvrAVAFCkvtuu8aAnMLEALw_wcB" class="btn">Explore More</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <a href="https://www.gotokyo.org/en/index.html"></a>
+            <img id="packages_img" src="images/p-8.jpg" alt="">
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/place/Tokyo,+Japan/@35.5040535,138.6486149,8z/data=!3m1!4b1!4m5!3m4!1s0x605d1b87f02e57e7:0x2e01618b22571b89!8m2!3d35.6761919!4d139.6503106"><i class="fas fa-map-marker-alt"></i></a> Tokyo </h3>
+                <p><b> Kon'nichiwa </b> </p><p> With its futuristic skyscrapers, unrivalled food scene, and wild nightlife, Tokyo is a rush of pure adrenaline. This vast and multifaceted city is famously cutting edge, yet its ancient Buddhist temples, </p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price"> ₹ 150000 <br> $2000.00 <span>$2500.00</span> </div>
+                <a href="https://www.gotokyo.org/en/index.html" class="btn">Explore Now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <a href="http://www.mcst.go.kr/english/"></a>
+            <img id="packages_img" src="images/p-9.png" alt="">
+            <div class="content">
+                <h3><a href="https://www.google.com/maps/place/South+Korea"><i class="fas fa-map-marker-alt"></i></a> South Korea </h3>
+                <p><b>K-Pop </b></p><p> While only 60 years ago South Korea was considered a developing country, it’s now one of Asia’s economic and cultural leaders. Super-chic Seoul combines modernism with ancient history;</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <div class="price">  ₹ 147000 <br> $1900.00  <span>$3000.00</span> </div>
+                <a href="http://www.mcst.go.kr/english/" class="btn">Explore Now</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- packages section ends -->
+
+<!-- Guidance section starts [COVID-19] -->
+
+<section class="Guidance" id="Guidance">
+
+    <h1 class="heading">
+        <span>C</span>
+        <span>o</span>
+        <span>v</span>
+        <span>i</span>
+        <span>d</span>
+        <span>-</span>
+        <span>1</span>
+        <span>9</span>
+    </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-hospital-alt"></i>
+            <h3>Hygienic hotels</h3>
+            <p>Make sure that hotels are hygienic with trained staff and they are following every precautionary measure by the Government. Staff will ensure social distance at the entrance, exit, elevators, reception, and dining area</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-virus"></i>
+            <h3> Safety </h3>
+            <p>Stay safe by taking some simple precautions, such as physical distancing, wearing a mask, keeping rooms well ventilated, avoiding crowds, cleaning your hands, and coughing into a bent elbow or tissue.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-people-arrows"></i>
+            <h3>6 ft Distance</h3>
+            <p> Maintain a distance of 2 meters or 6 feet from others around you as much as possible. Just mass gatherings can make you a target. In general, any gathering of over ten people should be avoided.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-check fa-3"></i>
+            <h3>Fully Vaccinated </h3>
+            <p>Be fully Vaccinated till 2nd dose of COVAXIN®, Covishield®, Sputnik V, or any government authorized Vaccine. And carry your Fully vaccienated certificate with you.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-pump-medical"></i>
+            <h3>Sanitization</h3>
+            <p> Carry your own necessary Sanitary product with you, like Sanitizers, Surgical or N-95 Mask, Papertowel, gloves, tampons and more.</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-hand-holding-medical"></i>
+            <h3>NO touch</h3>
+            <p>Avoid close contact with people, if possible. Maintain 6 feet between eachother and If possible avoid contact with animals too. In unknow public place keep distance with objects.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Guidance section ends -->
+
+<!-- gallery section starts  -->
+
+<section class="gallery" id="gallery">
+
+    <h1 class="heading">
+        <span>g</span>
+        <span>a</span>
+        <span>l</span>
+        <span>l</span>
+        <span>e</span>
+        <span>r</span>
+        <span>y</span>
+    </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="images/g-1.jpg" alt="">
+            <div class="content">
+                <h3> Mauritius </h3>
+                <p>Mauritius is Islands country in the north-central Indian Ocean with 1,200 small coral islands and sandbanks.</p>
+                <a href="https://en.wikipedia.org/wiki/Mauritius" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="images/g-2.jpg" alt="">
+            <div class="content">
+                <h3> ThaiLand </h3>
+                <p>Thailand is a land of islands, mountains, large forests and large cities. Bangkok is most visited city in the world.</p>
+                <a href="https://en.wikipedia.org/wiki/Thailand" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="images/g-3.jpg" alt="">
+            <div class="content">
+                <h3> Greece </h3>
+                <p>Greece is in southeastern Europe with thousands of islands. The land that was once loved by the Greek gods.</p>
+                <a href="https://en.wikipedia.org/wiki/Greece" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="images/g-4.jpg" alt="">
+            <div class="content">
+                <h3> Indonesian </h3>
+                <p>Indonesia, country located off the coast of mainland Southeast Asia. It is the most populous country in Southeast Asia</p>
+                <a href="https://en.wikipedia.org/wiki/Indonesia" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="images/g-5.jpg" alt="">
+            <div class="content">
+                <h3> Italy </h3>
+                <p>Italy, country of south-central Europe, occupying a peninsula that juts deep into the Mediterranean Sea.</p>
+                <a href="https://en.wikipedia.org/wiki/Italy" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="images/g-6.jpg" alt="">
+            <div class="content">
+                <h3> Hawaii </h3>
+                <p>Hawaiian Islands are Enjoy Worlds with One of the Best Destination. There is no heaven, but there are pieces of it that is Hawaii.</p>
+                <a href="https://en.wikipedia.org/wiki/Hawaii" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="images/g-7.jpg" alt="">
+            <div class="content">
+                <h3> Australia </h3>
+                <p>Australia, the smallest continent and one of the largest countries on Earth, lying between the Pacific and Indian oceans.</p>
+                <a href="https://en.wikipedia.org/wiki/Australia" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="images/g-8.jpg" alt="">
+            <div class="content">
+                <h3> New Zealand </h3>
+                <p>New Zealand is a group of small islands in the Pacific Ocean. Country with beautiful nature, happy people and exciting history.</p>
+                <a href="https://en.wikipedia.org/wiki/NewZealand" class="btn">see more</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="images/g-9.jpg" alt="">
+            <div class="content">
+                <h3>Egypt</h3>
+                <p>Egypt is in Middle-east with Arabic culture. It is home of pyramids, exploring of desert, mysteries of temples and large cities, it is truly a land of contrasts.</p>
+                <a href="https://en.wikipedia.org/wiki/Egypt" class="btn">see more</a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- gallery section ends -->
+
+<!-- Team section starts  -->
+
+<section class="team" id="team">
+
+    <h1 class="heading">
+        <span>T</span>
+        <span>e</span>
+        <span>a</span>
+        <span>m</span>
+    </h1>
+
+<div class="box-container">
+    <div class="swiper-container team-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="box" id="teamBox">
+                    <img src="images/pic1.jpg" alt="">
+                    <h3>Aryan Kumar</h3>
+                    <p><b>Frontend Developer & Designer</b></p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci quisquam sunt nesciunt fugiat odit minus illum asperiores dolorum enim sint quod ipsam distinctio molestias consectetur ducimus beatae, reprehenderit exercitationem!</p>
+                    <div class="media-icons">
+                        <a href="https://www.facebook.com" target="_blank" id="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" id="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.twitter.com" target="_blank" id="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:lit2021030@iiitl.ac.in" id="envelop"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/aryan-kumar-40342822a/" target="_blank" id="linkdein"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.github.com" target="_blank" id="github"><i class="fab fa-github"></i></a>
+                      </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="box" id="teamBox">
+                    <img src="images/pic2.jpg" alt="">
+                    <h3>Abhishek Kumar</h3>
+                    <p><b>Frontend Developer & Designer</b></p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci quisquam sunt nesciunt fugiat odit minus illum asperiores dolorum enim sint quod ipsam distinctio molestias consectetur ducimus beatae, reprehenderit exercitationem!</p>
+                    <div class="media-icons">
+                        <a href="https://www.facebook.com" target="_blank" id="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" id="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.twitter.com" target="_blank" id="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:lit2021049@iiitl.ac.in" id="envelop"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/abhishek-kumar-202362229/" target="_blank" id="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.github.com" target="_blank" id="github"><i class="fab fa-github"></i></a>
+                      </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="box" id="teamBox">
+                    <img src="images/pic5.jpeg" alt="">
+                    <h3>Sanskar Goel</h3>
+                    <p><b>Backend Developer</b></p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci quisquam sunt nesciunt fugiat odit minus illum asperiores dolorum enim sint quod ipsam distinctio molestias consectetur ducimus beatae, reprehenderit exercitationem!</p>
+                    <div class="media-icons">
+                        <a href="https://www.facebook.com" target="_blank" id="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" id="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.twitter.com" target="_blank" id="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:lit2021016@iiitl.ac.in" id="envelop"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/sanskar-goel-02a01923a/" id="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.github.com" target="_blank" id="github"><i class="fab fa-github"></i></a>
+                      </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="box" id="teamBox">
+                    <img src="images/pic7.jpeg" alt="">
+                    <h3>Aryan Nautiyal</h3>
+                    <p><b>Backend Developer</b></p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci quisquam sunt nesciunt fugiat odit minus illum asperiores dolorum enim sint quod ipsam distinctio molestias consectetur ducimus beatae, reprehenderit exercitationem!</p>
+                    <div class="media-icons">
+                        <a href="https://www.facebook.com" target="_blank" id="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" id="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.twitter.com" target="_blank" id="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:lit2021042@iiitl.ac.in" id="envelop"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.linkedin.com/in/aryan-nautiyal-74872a225/" target="_blank" id="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.github.com" target="_blank" id="github"><i class="fab fa-github"></i></a>
+                      </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</section>
+
+<!-- team section ends -->
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+    
+    <h1 class="heading">
+        <span>c</span>
+        <span>o</span>
+        <span>n</span>
+        <span>t</span>
+        <span>a</span>
+        <span>c</span>
+        <span>t</span>
+    </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="images/contact-img.svg" alt="">
+        </div>
+
+        <!-- <div class="hover"> -->
+        <form action="">
+            <div class="inputBox">
+                <input type="text" placeholder="name">
+                <input type="email" placeholder="email">
+            </div>
+            <div class="inputBox">
+                <input type="number" placeholder="number">
+                <input type="text" placeholder="subject">
+            </div>
+            <textarea placeholder="message" name="" id="" cols="30" rows="10"></textarea>
+            <input type="submit" class="btn" value="send message">
+        </form>
+
+    </div>
+    
+</section>
+
+<!-- <section class="sec-03">
+    <div class="box-container1">
+      <h1 class="heading">
+        <span>M</span>
+        <span>E</span>
+        <span>D</span>
+        <span>I</span>
+        <span>A</span>
+      </h1>
+      <div class="box1">
+        <div class="media-info">
+          <li>
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+          </li>
+          <li>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i> Youtube</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a>
+          </li>
+        </div>
+        <div class="image1">
+          <img src="images/p-17.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+</section> -->
+
+<!-- contact section ends -->
+
+<!-- brand section  -->
+<section class="brand-container">
+
+    <h1 class="heading">
+        <span>M</span>
+        <span>E</span>
+        <span>D</span>
+        <span>I</span>
+        <span>A</span>
+
+    </h1>
+
+</section>
+
+<div>
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="#46c8cd" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="#46c8cd" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="#46c8cd" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#46c8cd" />
+        </g>
+    </svg>
+</div>
+<div id="breaking-news-container">
+    <div id="breaking-news-colour" class="slideup animated">
+
+    </div>  
+     <span class="breaking-news-title delay-animated slidein">
+        // BREAKING //
+      </span> 
+      <a class="breaking-news-headline delay-animated2 fadein marquee">
+        <marquee behavior="scroll" scrollamount="12" class="blink">
+            <p>
+                 Portugal has finally removed all COVID-19 entry rules making it easier for travellers. From now on, travellers won’t have to show a negative RT PCR test report or any other negative test report or proof of vaccination. On July 1, Portugal eased all its entry restrictions as mentioned in the official tourism website, Visit Portugal.
+            </p>
+        </marquee>
+      </a>  
+  </div>  
+</div>  
+
+<!-- footer section  -->
+
+<section class="footer">
+
+    <div class="box-container">
+        <!-- <div class="box1">
+            <img src="images/p-18.png" height="150px" width="150px">
+        </div> -->
+        <div class="box">
+            <h3>About US</h3>
+            <p>
+                <b>THE World is BIG</b> dicover new places with us, adventure awaits.
+                <br>
+                <br>
+                <a href="#"> Number: <i class="fas fa-phone-volume"></i> +91 18001 18002</a>
+                <br>
+                Email:
+                <a href="mailto:worldtravel@worldtravel.com"><i class="fas fa-envelope"></i> customer@worldtravel.com</a>
+                <!-- <a href="mailto:customer@worldtravel.in"><i class="fas fa-envelope"></i> customer@worldtravel.in</a> -->
+                <br>
+                Address:
+                IIIT Lucknow, Ahmamau, Uttar Pradesh - 226002
+            </p>
+        </div>
+        <div class="box">
+            <h3>Branch locations</h3>
+            <a href="#">india</a>
+            <a href="#">Dubai</a>
+            <a href="#">USA</a>
+            <a href="#">Canada</a>
+            <a href="#">Korea</a>
+        </div>
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#home">home</a>
+            <a href="#book">book</a>
+            <a href="#packages">packages</a>
+            <a href="#Guidance">Guidance</a>
+            <a href="#gallery">gallery</a>
+            <a href="#team">team</a>
+            <a href="#contact">contact</a>
+        </div>
+        <div class="box" >
+            <h3>follow us</h3>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"> Facebook</i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"> Instagram</i></a>
+            <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"> Twitter</i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"> Linkedin</i></a>
+            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"> Youtube</i></a>
+            <a href="https://www.github.com/" target="_blank"><i class="fab fa-github">  GitHub</i></a>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="credit"> created by <a href="#"><span> World Travel Team </span></a> Copyright © 2022 | all rights reserved! </h1>
+
+</section>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!-- custom js file link  -->
+<script src="script.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="./mail.js"></script>
+
+</body>
+</html>

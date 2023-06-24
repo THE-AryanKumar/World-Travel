@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ's</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+    crossorigin="anonymous"/>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="profile/profile.css" /> -->
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YSDT4SH23Z');
+</script>
+
+</head>
+<body>
+
+<div id="loader"></div>
+    
+<!-- header section starts  -->
+
+<header id="headerbar">
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <a href="#" class="logo"><span>World</span>Travel</a>
+
+    <nav class="navbar" id="topnav">
+        <ul class="nav">
+
+        <li><a href="Tourism.html"><i class="fa fa-home"> home </i></a></li>
+        <div class="dropdown">
+            <li><a href="Tourism.html"> book <i class="fa fa-caret-down"></i></a></li>
+            <div class="dropdown-content">
+                <a href="Tourism.html">Packages</a>
+                <a href="Tourism.html">Guidance</a>
+                <a href="Tourism.html">Book</a>
+            </div>
+        </div>
+        <li><a href="Tourism.html">Gallery</i></a></li>
+        <div class="dropdown">
+            <li><a href="Tourism.html"> Info <i class="fa fa-caret-down"></i></a></li>
+            <div class="dropdown-content">
+                <a href="Weather/Weather/weather.html">Weather</a>
+                <a href="Tourism.html">ChatBox</a>
+                <a href="Tourism.html">Link</a>
+            </div>
+        </div>
+        <li><a href="testimonial/testimonial/index.html"> Testimonial</a></li>
+        <div class="dropdown">
+            <li><a href="Tourism.html">More <i class="fa fa-caret-down"></i></a></li>
+            <div class="dropdown-content">
+                <a href="Tourism.html">Team</a>
+                <a href="Tourism.html">Contact</a>
+                <a href="Tourism.html">Media</a> 
+            </div>
+        </div>
+        </ul>
+    </nav>
+
+    <div class="icons">
+        <i href="" class="fas fa-search" id="search-btn"></i>
+        <a href="Login Page/Login Page/login-register.html"><i class="fa fa-user" id="login-btn"></i></a>
+        <button onclick="darkmode()" class="fa fa-adjust" id="adjust-btn"></button>
+    </div>
+
+    <div class="action">
+        <div class="profile" onclick="menuToggle();">
+          <img src="images/pic1.jpg" />
+        </div>
+        <div class="menu">
+          <h3>Someone Famous<br /><span>Website Designer</span></h3>
+          <ul>
+            <li><img src="profile/user.png" /><a href="#">My profile</a></li>
+            <li><img src="profile/edit.png" /><a href="#">Edit profile</a></li>
+            <li><img src="profile/envelope.png" /><a href="#">Inbox</a></li>
+            <li><img src="profile/settings.png" /><a href="#">Setting</a></li>
+            <li><img src="profile/question.png" /><a href="#">Help</a></li>
+            <li><img src="profile/log-out.png" /><a href="#">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+      <script>
+        function menuToggle() {
+          const toggleMenu = document.querySelector(".menu");
+          toggleMenu.classList.toggle("active");
+        }
+      </script>
+
+    <form action="" class="search-bar-container">
+        <input type="search" id="search-bar" placeholder="search here...">
+        <label for="search-bar" class="fas fa-search"></label>
+    </form>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- login form container  -->
+
+<div class="login-form-container">
+
+    <i class="fas fa-times" id="form-close"></i>
+
+    <form action="">
+        <h3>login</h3>
+        <input type="email" class="box" placeholder="enter your email">
+        <input type="password" class="box" placeholder="enter your password">
+        <input type="submit" value="login now" class="btn">
+        <input type="checkbox" id="remember">
+        <label for="remember">remember me</label>
+        <p>forget password? <a href="#">click here</a></p>
+        <p>don't have and account? <a href="#Signup">Signup</a></p>
+    </form>
+</div>
+<div class="jumbotron box-shadow">
+    <h1 class="offer-text">FAQs</h1>
+  </div>
+  
+  
+  <section class="faq-section pb-5">
+      <div class="container">
+          <div class="row justify-content-center align-items-center">
+              <div class="col-md-10">
+                  <h2 class="std-heading">Frequently Asked Questions</h2>
+                  <div id="faq-container"></div> 
+  
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>	
+  <script>
+  
+  
+  
+  
+  
+  function toggleAccordion(elem){
+      const items = document.querySelectorAll('.accordion button');
+      const itemToggle = elem.getAttribute('aria-expanded');
+      for (i = 0 ; i < items.length; i++){
+          items[i].setAttribute('aria-expanded','false');
+      }
+  
+      if(itemToggle == 'false'){
+          elem.setAttribute('aria-expanded','true');
+      }
+  }
+  
+  
+  let faqs = [{
+          title: " Registration Process",
+          icon: "far fa-id-card",
+          content_main: [{
+                  title: "How Register in World Travel",
+                  content: [
+                      "Click on the 'Sign-up'. Enter your valid details, like email, username and upload photo. Then Sign-In next Page and your successfully Register."
+                  ]
+              },
+              {
+                  title: "Why Should I sign-In your Tourism site. ",
+                  content: [
+                      "Download the app and log on, completing the profile information requested, On the ‘Home’ tab scroll to the bottom and select the service you wish to provide, You will then be taken to the ‘Profile’ tab where you should complete the requested information, Ensure you select where you are able to provide the service (At Home / Online / Drop off) as applicable, You have the option then to set when you appear available in searches based on setting your working days and times. You can set three separate working periods (days and times). For example: Mon, Wed, Fri between 9 - 12 and then another working period on Sat 9 - 17.00, Finally set your hourly charge and hit save to create your service profile – Requesters will now be able to search and book you!"
+                  ]
+              },
+              {
+                  title: "What if I am a business, can I register?",
+                  content: [
+                      "Yes you are in fact most welcome.Currently as we are a new start up our app allows individuals and business owners to set up an account for one user only. However, in the future you will be able to set up multiple profiles across all your employees under one overall business profile "
+                  ]
+              },
+              {
+                  title: "I want to create more than one profile",
+                  content: [
+                      "World Travel allows you to create multiple profiles for free as we know you are a multi skilled bunch. For example, you may want to set up a gardening profile and a dog walking profile or cleaner and tutor "
+                  ]
+              },
+              {
+                  title: "Profile featuring",
+                  content: [
+                      "We will be offering profile featuring in the future – watch this space!"
+                  ]
+              },
+              {
+                  title: "Can I link my profile to social media?",
+                  content: [
+                      "We are working on this, but in the meantime feel free to include world travel on Instagram"
+                  ]
+              },
+              {
+                  title: "Contact Preferences",
+                  content: [
+                      "As part of the registration process or at any time, you can update your contact preferences by going to the ‘Profile / Personal Details’ section. Being able to contact you is key so please be sure to keep this updated"
+                  ]
+              },
+              {
+                  title: "I want to provide a service however its not available on the app",
+                  content: [
+                      "On the ‘Home’ tab scroll to the bottom and then you can let us know of any services you wish to provide which we currently don’t have on the app. We regularly review our service list and your suggestions are helpful for us to know which ones we should add"
+                  ]
+              },
+              {
+                  title: "How do I sign out of World Travel",
+                  content: [
+                      "Navigate to the ‘Profile’ tab – Click on 'Log out'"
+                  ]
+              }
+          ]
+      },
+      {
+          title: " Profiles and Searching",
+          icon: "fas fa-search",
+          content_main: [{
+                  title: "How do I search and book a service provider?",
+                  content: [
+                      
+                      "You will then see when that service provider is available (Days and times) and select the date and time which suits you",
+                      "Scroll down to the bottom of the screen where you will see a summary of the booking cost, with your payment’s details",
+                      "If you are happy to proceed, click on the ‘Book service with…’ button",
+                      "At this point your booking request will appear in the ‘Bookings tab’ pending acceptance from the Service provider",
+                      "As soon as the service provider accepts your booking you will be notified, and it will appear in the ‘Bookings tab’ under Accepted bookings"
+                  ]
+              },
+              {
+                  title: "How do I view a Service Providers profile?",
+                  content: [
+                      "Provider: Following your search for a Service provider you will have a list of Providers to view. If you wish to view their detailed profile, select the Service Provider, and click on that Profile "
+                  ]
+              },
+              {
+                  title: "How do I specify where I want the Service?",
+                  content: [
+                      "Depending on the service, select if you want that service performed at your house (i.e.cleaning), online (i.e.tutoring) or drop off at their house / place of work (i.e.Personal training in a gym)"
+                  ]
+              },
+              {
+                  title: "How do I locate a service provider near me?",
+                  content: [
+                      "From the home screen select the service you wish to book",
+                      "You will be taken to the ‘Services’ tab where you can use Google maps to filter your search based on radius of where you need the service (i.e.near your home / online)"
+                  ]
+              },
+              {
+                  title: "How do I update my user profile or other settings like payment methods?",
+                  content: [
+                      "In the ‘Profile’ tab you can update your user profile under ‘Personal details’ e.g. name, address, phone number and email address",
+                      "Under ‘My Services’ you can edit the services you offer (if you are a service provider)",
+                      "Under ‘Setting’ you can edit / add Payment Methods and contact preferences. Additionally, access your Stripe account"
+                  ]
+              }
+          ]
+      },
+      {
+          title: " Contacting Providers and giving feedback",
+          icon: "far fa-comment-alt",
+          content_main: [{
+                  title: "How do I contact the provider or requester?",
+                  content: [
+                      "Within the booking confirmation there is a ‘Message’ button which will allow you to send messages between both parties once the booking has been requested. Then going forward, you can continue to communicate using the ‘Chat’ feature"
+                  ]
+              },
+              {
+                  title: "How do I view my feedback?",
+                  content: [
+                      "Access via the ‘Profile’ tab, under ‘My Services’. From here you can see your average star rating for each service you provide"
+                  ]
+              },
+              {
+                  title: "How do I give feedback to a provider or Requester?",
+                  content: [
+                      "Once a service is completed the requester will have the option to provide feedback directly via the ‘Feedback’ pop up. From here you can provide a simple rating 1 - 5 stars for the provider"
+                  ]
+              }
+          ]
+      },
+      {
+          title: " Calendar",
+          icon: "far fa-calendar-alt",
+          content_main: [{
+                  title: "How do I view my bookings?",
+                  content: [
+                      "Navigate to the ‘Bookings’ tab"
+                  ]
+              },
+              {
+                  title: "How do I change or cancel a booking?",
+                  content: [
+                      "In the ‘Bookings’ tab, navigate to the booking you wish to cancel and select it.",
+                      "Click the ‘Cancel’ button and provide a reason. You can either cancel because you no longer want to provide or receive the service or propose to reschedule the booking.",
+                      "If you wish to reschedule its recommended to message the requester or provider to agree a mutually convenient date / time and then the requester would need to re book per this agreement"
+                  ]
+              }
+          ]
+      },
+      {
+          title: " Transactions & Payments",
+          icon: "fas fa-money-check-alt",
+          content_main: [{
+                  title: "What does it cost to use WorkAZ?",
+                  content: [
+                      "The app is free to use until the end of July 2022, following which for every transaction that takes place a 5% fee will be deducted from the total booking. The requester of a service is required to pay for any services booked through the app at all times"
+                  ]
+              },
+              {
+                  title: "How do I know if I have bookings?",
+                  content: [
+                      "You will receive a notification via email and push notification on your phone (depending on your contact preference settings), informing you that you have a new booking. To view the booking navigate to the ‘Bookings’ tab where you will be able to accept or decline the booking request"
+                  ]
+              },
+              {
+                  title: "I am a provider and I’ve completed the service, how do I prove I’ve done a good job",
+                  content: [
+                      "Depending on what the service entails, we suggest taking photos, for example if you have completed the gardening or something visual like mending a fence and then sending them to the requester. If you have provided personal training for example, then obviously proof is harder to provide and will rely on goodwill between the provider and receiver. At the time, it’s always best to verbally or via a text / email, where possible, confirm the requestor is happy with your services"
+                  ]
+              },
+              {
+                  title: "In the unlikely event, a provider does not turn up…",
+                  content: [
+                      "As the Requester you would access the booking via your bookings tab and message the service provider. If you need to reschedule then cancel the booking and re-book at an alternative slot.",
+                      "If you no longer wish to use this service provider then cancel the booking and select another service provider"
+                  ]
+              },
+              {
+                  title: "What do I do once the service has been completed if I am a Provider or Requester?",
+                  content: [
+                      "<b>Provider</b>: In the Bookings section you would select job and confirm it has been completed. A notification would then be sent to the Requester to confirm the job had been completed. The requestor would then also confirm and then payment would be released via Stripe Payment processing.",
+                      "<b>Requester</b>: Once a job has been completed the Provider will confirm the job has been completed via the app, which will send you a notification. Access the link and you have the option to confirm the job has been done to your satisfaction",
+                      "Once you confirm the job has been done to your satisfaction then payment will be released to the service provider"
+                  ]
+              },
+              {
+                  title: "What happens if the requester doesn’t confirm the job has been completed?",
+                  content: [
+                      "If the Requester does not confirm the job has been completed or raised an issue then payment will be made automatically from Stripe within 5 days"
+                  ]
+              },
+              {
+                  title: "What if the service provided differs to the one requested?",
+                  content: [
+                      "For example, you book a gardener for 3 hours however he completes the job in 2 hours or the weather means the job cant be finsihed there an then",
+                      "In these cases, we recomend seeing if there is additional work that can be carried out to use up the time or if the provider can come back to finish the job at a later date",
+                      "If these are not options, then contact us here at WorkAZ and we can help to action a partial refund",
+                      "To action this, please agree the amounts between yourselves and advise us via email on info@work-az.com with details of the provider and job date/time"
+                  ]
+              },
+              {
+                  title: "What payments platform does WorkAZ use?",
+                  content: [
+                      "We use Stripe for all payment processing " +
+                      "Stripe Privacy Policy and T&Cs related to the payment service we use: " +
+                      "<a href='https://stripe.com/gb/privacy'>https://stripe.com/gb/privacy</a> and " +
+                      "<a href='https://stripe.com/gb/connect-account/legal'>https://stripe.com/gb/connect-account/legal</a>",
+                  ]
+              },
+              {
+                  title: "How do I know my money / financial details are safe?",
+                  content: [
+                      "All payments are handled by our third party payments processing partner Stripe, who are a global financial service firm. WorkAZ does not store any financial related information outside of Stripe",
+                  ]
+              },
+              {
+                  title: "How do I check my payment history?",
+                  content: [
+                      "On the ‘Home’ tab you can view a summary of the current months income and if you have booked services, how much you have spent. If you would like to view transaction level then click on ‘My Earnings’",
+                      "If you are a service provider you can also view your payment history within the Stripe account which you can access under ‘Profile’ tab / Settings / Stripe Account"
+                  ]
+              },
+              {
+                  title: "Dispute Resolution",
+                  content: [
+                      "Any dispute needs to be raised within 3 days of the original booking date",
+                      "In the first instance please make the other party aware of the dispute and ensure both parties have actively tried to reach an agreement",
+                      "If you cannot come to an agreement, then please contact Info@workaz.com providing the following information:",
+                      " - Your name and user name",
+                      " - The provider or requesters user name",
+                      " - Date and time of booking",
+                      " - Reason for dispute with any evidence you may have to support the dispute",
+                      "WorkAZ will then reach out to the other party and ask for their response",
+                      "WorkAZ will then review the dispute details and an impartial evaluator will provide both parties with a fair recommendation",
+                      "We are not obliged to mediate between the Service Requester and the Service Provider in the event of any dispute arising between them, however will try to help where we can",
+                      "If you don’t agree with the recommendation, you can take the matter to your local court or tribunal at your own cost",
+                      "Any help guides provided to seek to settle a dispute are for information purposes only"
+                  ]
+              }
+          ]
+      }
+  ]
+  
+  
+  
+  
+  
+  
+      let faq_html = '';
+      for(var i = 0; i < faqs.length; i++){
+        let main_title = faqs[i].title;
+        let icon = faqs[i].icon;
+        faq_html += `<div class="accordion">
+            <h5 class="std-heading pt-5"> <i class="${icon} mr-2"></i>${main_title}</h5>`;
+        let content_main = faqs[i].content_main;
+        for(var j = 0; j < content_main.length; j++){
+          let sub_title = content_main[j].title;
+          let sub_content = content_main[j].content;
+          faq_html += `<div class="accordion-item">
+                <button id="accordion-button-1" aria-expanded="false" onclick="toggleAccordion(this)">
+                  <span class="accordion-title">${sub_title}</span>
+                  <span class="icon" aria-hidden="true"></span>
+                </button>`;
+           faq_html += `<div class="accordion-content">`;
+          for(var k = 0; k < sub_content.length; k++){
+             faq_html += `<p>${sub_content[k]}</p> `;
+          }
+            faq_html +=   ` </div></div>`;
+        }
+          faq_html += `</div>`;
+      }
+   $("#faq-container").html(faq_html);
+  
+  
+  
+</script>
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>About US</h3>
+            <p>
+                <b>THE World is BIG</b> dicover new places with us, adventure awaits.
+                <br>
+                <br>
+                <a href="#"> Number: <i class="fas fa-phone-volume"></i> +91 98765 43201</a>
+                <br>
+                Email:
+                <a href="#"><i class="fas fa-envelope"></i> worldtravel@worldtravel.com</a>
+                <a href="#"><i class="fas fa-envelope"></i> customer@worldtravel.in</a>
+            </p>
+        </div>
+        <div class="box">
+            <h3>Branch locations</h3>
+            <a href="#">india</a>
+            <a href="#">Dubai</a>
+            <a href="#">USA</a>
+            <a href="#">Canada</a>
+            <a href="#">Korea</a>
+        </div>
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#home">home</a>
+            <a href="#book">book</a>
+            <a href="#packages">packages</a>
+            <a href="#Guidance">Guidance</a>
+            <a href="#gallery">gallery</a>
+            <a href="#team">team</a>
+            <a href="#contact">contact</a>
+        </div>
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"> Facebook</i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"> Instagram</i></a>
+            <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"> Twitter</i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"> Linkedin</i></a>
+            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"> Youtube</i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <h1 class="credit"> created by <a href="#"><span> World Travel Team </span></a> Copyright © 2022 | all rights reserved! </h1>
+
+</section>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+<!-- custom js file link  -->
+<script src="script.js">
+
+</script>
+
+<script src="moment.min.js">
+
+</script>
+  </body>
+  </html>
